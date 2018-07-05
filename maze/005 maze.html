@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Maze</title>
+    <mete charset="utf-8"></mete>
+    <style>
+        #maze {
+            border: 4px solid grey;
+        }
+
+        .mazeroom {
+            width: 14px;
+            height: 14px;
+            padding: 0px;
+            margin: 0px;
+            font-size:1px;
+            
+        }
+
+        .mazewall {
+            width: 1px;
+        }
+
+        table {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #div_02 {
+            float: left;
+        }
+
+        #controller {
+            float: left;
+        }
+    </style>
+    <script>
+        var passenger = {
+            xpos: 13,
+            ypos: 1,
+            xUp: false,
+            yLeft: false,
+            xDown: false,
+            yRight: false
+        }
+        var movecnt = 0;
+        var autopilotinterval;
+        var interval_01;
+        var historys = new Array();
+        var map;
+        const NOT_VISITED = 0;
+        const VISITED = 1;
+        const WALL = 2;
+        const START_POS = 3;
+        const END_POS = 4;
+        //전역변수
+
+        function writeArea(area, string, flag) {
+            if (flag) area.innerHTML += string;
+            else { area.innerHTML = string; }
+        }
+        function writeDiv(str, flag) {
+            writeArea(document.getElementById("div_01"), str, flag);
+        }
+
+        function colorDot(x, y, color) {
+            var str = "cell" + x + "_" + y;
+            document.getElementById(str).style.backgroundColor = color;
+        }
+        function writeDot(x, y, z) {
+				var str = "cell" + x + "_" + y;
+				document.getElementById(str).innerHTML = z;
+			}
+        function clearblink(){
+            clearInterval(interval_01);
+        }
+        function makeMaze(x, y) {
+            clearInterval(interval_01);
+            writeArea(document.getElementById("div_02"),"");
+            var mazeRoom = new Array(2 * x - 1);
+            for (var i = 0; i < mazeRoom.length; i++) {
+                mazeRoom[i] = new Array(2 * y - 1);
+                if (i % 2 == 1) mazeRoom[i].fill(WALL);
+                else {
+                    for (var j = 0; j < mazeRoom[i].length; j++) {
+                        if (j % 2 == 1) mazeRoom[i][j] = WALL;
+                        else { mazeRoom[i][j] = NOT_VISITED; }
+                    }
+                }
+            }
+            drawingMaze();
+            var r_x = 2 * parseInt(Math.random() * x);
+            var r_y = 2 * parseInt(Math.random() * y);
+            mazeRoom[r_x][r_y] = START_POS;
+            passenger.xpos = r_x;
+            passenger.ypos = r_y;
+            carvingMaze(r_x, r_y);
+            for (var k = 0; k < 10; k++) {
+                r_x = 2 * parseInt(Math.random() * x);
+                r_y = 2 * parseInt(Math.random() * y);
+                mazeRoom[r_x][r_y] = END_POS;
+            }
+            map = mazeRoom;
+            colorMaze();
+
+            function carvingMaze(x, y) {
+                var moveable = listMovable(x, y);
+                while (moveable.length > 0) {
+                    var r = parseInt(Math.random() * moveable.length);
+                    mazeRoom[moveable[r][0]][moveable[r][1]] = VISITED;
+                    breakWall(x, y, moveable[r][0], moveable[r][1]);
+                    carvingMaze(moveable[r][0], moveable[r][1]);
+                    moveable = listMovable(x, y)
+                }
+            }
+            function listMovable(x, y) {
+                var tmpArr = new Array();
+                if (checkMovable(x + 2, y)) tmpArr.push([x + 2, y]);
+                if (checkMovable(x - 2, y)) tmpArr.push([x - 2, y]);
+                if (checkMovable(x, y + 2)) tmpArr.push([x, y + 2]);
+                if (checkMovable(x, y - 2)) tmpArr.push([x, y - 2]);
+                return tmpArr;
+            }
+            function checkMovable(x, y) {
+                if (0 <= x && x < mazeRoom.length && 0 <= y && y < mazeRoom[x].length) {
+                    if (mazeRoom[x][y] == NOT_VISITED) return true;
+                    else { return false; }
+                }
+                else { return false; }
+            }
+            function drawingMaze() {
+                var str = "<table id='maze' border='0' cellspacing='0' style='border-collapse:collapse' >";
+                for (var i in mazeRoom) {
+                    str += "<tr>";
+                    for (var j in mazeRoom[i]) {
+                        if (i % 2 == 1) str += `<td class='mazeVwall' id='cell${i}_${j}'></td>`;
+                        else {
+                            if (j % 2 == 1) str += `<td class='mazewall' id='cell${i}_${j}'></td>`;
+                            else { str += `<td class='mazeroom' id='cell${i}_${j}'></td>`; }
+                        }
+                    }
+                    str += "</tr>";
+                } str += "</table>";
+                this.writeDiv(str);
+            }
+            function breakWall(x1, y1, x2, y2) {
+                if (x1 == x2) {
+                    y1 > y2 ? mazeRoom[x1][y1 - 1] = VISITED : mazeRoom[x1][y1 + 1] = VISITED;
+                } else if (y1 == y2) {
+                    x1 > x2 ? mazeRoom[x1 - 1][y1] = VISITED : mazeRoom[x1 + 1][y1] = VISITED;
+                } else { alert("Error Occur"); }
+            }
+
+            function colorMaze() {
+                for (var i in mazeRoom) {
+                    for (var j in mazeRoom[i]) {
+                        if (mazeRoom[i][j] == NOT_VISITED) colorDot(i, j, "lightskyblue");
+                        if (mazeRoom[i][j] == WALL) colorDot(i, j, "grey");
+                        if (mazeRoom[i][j] == VISITED) colorDot(i, j, "lightskyblue");
+                        if (mazeRoom[i][j] == START_POS) colorDot(i, j, "blue");
+                        if (mazeRoom[i][j] == END_POS) colorDot(i, j, "red");
+                    }
+                }
+            }
+        }
+        function drawPassenger() {
+            var pos = "cell" + passenger.xpos + "_" + passenger.ypos;
+            var image = document.createElement("img");
+            image.src = "passenger.png";
+            image.width = "14";
+            image.height = "14";
+            image.margin = "0";
+            image.padding = "0";
+            image.style.display = "block";
+            document.getElementById(pos).appendChild(image);
+        }
+        function delPassenger() {
+            var pos = "cell" + passenger.xpos + "_" + passenger.ypos;
+            var child = document.getElementById(pos).childNodes[0];
+            document.getElementById(pos).removeChild(child);
+        }
+
+        function movePassenger(code) {
+            getPossible();
+            switch (code) {
+                case 38:
+                    if (passenger.xUp == true) { delPassenger(); passenger.xpos -= 2; drawPassenger(); movecnt++; }
+                    else { mapQuake(); }
+                    break;
+                case 40:
+                    if (passenger.xDown == true) { delPassenger(); passenger.xpos += 2; drawPassenger(); movecnt++; }
+                    else { mapQuake(); }
+                    break;
+                case 37:
+                    if (passenger.yLeft == true) { delPassenger(); passenger.ypos -= 2; drawPassenger(); movecnt++; }
+                    else { mapQuake(); }
+                    break;
+                case 39:
+                    if (passenger.yRight == true) { delPassenger(); passenger.ypos += 2; drawPassenger(); movecnt++; }
+                    else { mapQuake(); }
+                    break;
+                default:
+                    break;
+            }
+            var tmp = [passenger.xpos, passenger.ypos];
+            historys.push(tmp);
+            writeArea(document.getElementById("div_02"), movecnt)
+            if (map[passenger.xpos][passenger.ypos] == END_POS) {
+                clearInterval(autopilotinterval);
+                writeArea(document.getElementById("div_02"), "축하합니다!" + movecnt)
+
+
+            }
+            function getPossible() {
+                //미로 둘레 벽이 없기 때문에 미로안에서만 움직일 수 있다는 조건을 추가로 넣어준다.
+                if (0 < passenger.xpos - 1 && map[passenger.xpos - 1][passenger.ypos] != WALL) passenger.xUp = true;
+                else { passenger.xUp = false }
+                if (passenger.xpos + 1 < map.length && map[passenger.xpos + 1][passenger.ypos] != WALL) passenger.xDown = true;
+                else { passenger.xDown = false }
+                if (passenger.ypos + 1 < map[passenger.xpos].length && map[passenger.xpos][passenger.ypos + 1] != WALL) passenger.yRight = true;
+                else { passenger.yRight = false; }
+                if (0 < passenger.ypos - 1 && map[passenger.xpos][passenger.ypos - 1] != WALL) passenger.yLeft = true;
+                else { passenger.yLeft = false; }
+            }
+
+            function mapQuake() {
+            }
+        }
+        function viewReplay(speed) {
+            delPassenger();
+            passenger.xpos = historys[0][0];
+            passenger.ypos = historys[0][1];
+            drawPassenger();
+            var cnt = 0;
+            setInterval(function () {
+                replaymove(cnt++);
+                if (cnt == historys.length) cnt = 0;
+            }, speed
+            );
+
+
+            function replaymove(now) {
+                delPassenger();
+                if (now == historys.length - 1) {
+                    passenger.xpos = historys[0][0];
+                    passenger.ypos = historys[0][1];
+                }
+                else {
+                    var x = parseInt(now) + 1
+                    passenger.xpos = historys[x][0];
+                    passenger.ypos = historys[x][1];
+                }
+                drawPassenger();
+            }
+        }
+        function showShortest() {
+            var history = [[passenger.xpos, passenger.ypos]];
+            var ways = new Array();
+            var shortest=Infinity;
+            var index=0;
+            findAllways(history);
+            for (var j in ways) {
+                writeArea(document.getElementById("div_02"),`거리${parseInt(j)+1}:${ways[j].length}`,true)
+                var str = "#" + Math.round(Math.random() * 0xffffff).toString(16);
+                if(ways[j].length<shortest){shortest=ways[j].length;index=j;}
+                for (var i = 1; i < ways[j].length - 1; i++) {
+                    colorDot(ways[j][i][0], ways[j][i][1], str);
+                }
+            }
+            writeArea(document.getElementById("div_02"),`최단거리:${shortest}`,true)
+            interval_01 = setInterval(function(){
+            if(str!="lightskyblue")str = "#" + Math.round(Math.random() * 0xffffff).toString(16);
+            else(str="lightskyblue");
+            for (var i = 1; i < ways[index].length - 1; i++){
+                colorDot(ways[index][i][0], ways[index][i][1], str);
+                writeDot(ways[index][i][0], ways[index][i][1], i);
+            }
+        },1000);
+
+            function findAllways(history) {	//지금까지 진행된 기보(배열)을 매개변수로 받음.
+                if (map[history[history.length - 1][0]][history[history.length - 1][1]] == END_POS) {
+                    ways.push(history);
+                }
+                else {
+                    var possible = getPossible4Shortest(history[history.length - 1][0], history[history.length - 1][1]);
+                    for (var i in possible) {
+                        var cnt = 0;
+                        for (var j in history) {
+                            if (possible[i].toString() == history[j].toString()) break;
+                            cnt++;
+                            if (cnt == history.length) {
+                                // writeArea(document.getElementById("div_02"), cnt);
+                                var y = (new Array(...history, possible[i]));
+                                var x = findAllways(y);
+                            }
+                        }
+                    }
+                }
+                function getPossible4Shortest(x, y) { //이동가능한 점들을 배열로 리턴함
+                    //맵 밖으로 나가지 못하게 제한을 둬야함
+                    var array = new Array();
+                    if (0 < x && map[x - 1][y] != WALL) array.push([x - 2, y])
+                    else { }
+                    if (x < map.length - 1 && map[x + 1][y] != WALL) array.push([x + 2, y])
+                    else { }
+                    if (0 < y && map[x][y - 1] != WALL) array.push([x, y - 2])
+                    else { }
+                    if (y < map[x].length - 1 && map[x][y + 1] != WALL) array.push([x, y + 2])
+                    else { }
+                    return array;
+                }
+            }
+        }
+        function randomAutoPilot(speed) {
+            autopilotinterval = setInterval(function () {
+                var dice = parseInt(Math.random() * 4);
+                switch (dice) {
+                    case 0: movePassenger(37); break;
+                    case 1: movePassenger(38); break;
+                    case 2: movePassenger(39); break;
+                    case 3: movePassenger(40); break;
+                    default:
+                        break;
+                }
+            }, speed);
+        }
+
+        function startGame(){
+            makeMaze(30,30);
+            drawPassenger();
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="미로 생성" onclick="startGame()">
+    <input type="button" value="최단 거리 찾기" onclick="showShortest()">
+    <input type="button" value="리플레이 보기" onclick="viewReplay()">
+    <textarea id="controller" onKeyUp="movePassenger(event.keyCode)" ;>이곳을 클릭 후 방향키로 조종가능</textarea>
+    <div id="div_02"></div>
+    <div style="clear:both; margin-bottom:5px;"></div>
+    <div id="div_01"></div>
+</body>
+
+</html>
