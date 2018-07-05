@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
+        android:background="#8064a2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="가입"
+            android:textColor="#fff"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_join">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="제 1조 멤버십 규정 일반
+\n1.본 약관은 주식회사 The One Hotel(이하 회사)의 호텔 멤버쉽 프로그램의 이용에 관한 기본적인 사항을 정함을 목적으로 합니다.\n
+\n2. 멤버십 프로그램의 이용 약관 및 멤버십 운영에 관련한 혜택 및 서비스의 적용 범위는 다음과 같습니다.
+\n3. 회사는 본 약관에서 멤버십 프로그램의 회원 자격과 혜택, 멤버십 포인트 획득과 사용에 관한 내용을 규정합니다.
+\n4. 멤버십 프로그램은 만 19세 이상의 개인 회원을 대상으로 하며, 법인 또는 단체 등은 멤버십에 가입할 수 없습니다.
+\n5. 멤버십 프로그램의 약관, 규칙 중에 신청자 및 회원의 소속 국가 및 거주지의 강행법규에 위배되는 부분이 있을 경우, 해당 부분은 해당 회원에 한하여 무효화 합니다.
+\n6. 회사는 멤버십 운영 주체의 상황에 따라 본 이용약관을 포함한 프로그램 구성, 특전 및 그 내용을 변경하고, 멤버십 프로그램을 종료할 수 있습니다.
+\n7. 회사는 본 약관을 변경하는 경우 변경되는 약관의 적용일자 및 변경내용, 사유 등을 명시하여 현행약관과 함께 변경약관 적용일로부터 10일(회원에게 불리하게 변경되는 경우 1개월) 이전에 서면, 전자우편, 홈페이지 공지 등의 방법을 통해 회원에게 통지합니다. 회원은 변경약관에 동의하지 않을 수 있으며, 변경약관에 동의하지 않을 경우 회원 탈퇴를 할 수 있습니다. 단, 회사가 위 약관 변경 통지를 하면서 변경약관 적용일까지 의사표시를 하지 않으면 변경약관에 동의한 것으로 간주한다는 내용을 고지하였음에도 불구하고, 회원이 명시적으로 거부의사를 표시하지 않은 경우 회원이 변경약관에 동의한 것으로 간주합니다. 단, 회원에게 불리하게 변경되는 경우 통지 후 2개월 이내 회원 탈퇴를 할 수 있습니다.
+\n8. 회사는 멤버십 프로그램 종료 최소 6개월 이전에 호텔 공식 웹사이트(https:www.shillahotels.com, 이하 “멤버십 홈페이지”)에 공지를 하며, 전 회원을 대상으로 1회 이상 전자우편을 통한 안내문을 발송합니다.
+\n9. 프로그램 종료 통보 이후 6개월 경과 시점 기준으로 보유 포인트는 자동 소멸되며, 모든 혜택 및 서비스 제공이 중단됩니다.
+\n10. 주소 및 기타 개인정보 사항의 변경 시 회원은 회사에 통보하여야 하고, 미 통보로 인한 회원의 불이익은 해당 회원이 감수하며 회사가 책임지지 않습니다.
+\n11. 회사는 호텔정보 및 회원의 계정명세 등을 회원에게 통지할 수 있고, 우편에 의한 통지의 경우 그 분실 또는 전달의 지연에 대한 책임을 지지 않습니다.
+\n12. 본 약관은 대한민국 법률이 적용되며, 멤버십 프로그램과 관련한 분쟁에 대한 소송은   서울중앙지방법원을 전속관할법원으로 합니다.
+\n제2조 회원 가입 및 계정생성
+
+
+\n1. 회원 가입은 멤버십 홈페이지 또는 각 호텔 및 리조트의 지정된 영업장에서 가능합니다.
+\n2. 회원 가입은 무료입니다.
+\n3. 회원은 하나를 초과하는 멤버십을 가입하거나 소유할 수 없습니다.
+\n4. 멤버십 중복 가입 시 하나를 제외한 멤버십은 강제 탈퇴 처리되며, 탈퇴 처리되는 멤버십의 포인트는 소멸됩니다.
+\n5. 회원 등록 시 성명, 생년월일, 성별, 전자우편주소, 전화번호는 필수 기입 사항입니다.
+\n6. 회원 등록 즉시 회원번호를 발급합니다.
+\n7. 회원은 회원번호를 이용하여 멤버십 홈페이지에서 본인의 계정을 확인할 수 있습니다.
+\n8. 회원은 멤버십 홈페이지의 개인 계정을 이용하여 보유 포인트, 적립내역, 개인정보 등 각종 정보의 열람 및 수정을 할 수 있습니다.
+\n9. 회원 가입 시 모바일 멤버십 카드가 발급되며 모바일 멤버십 카드는 멤버십 홈페이지에서 확인 가능합니다, 실물 멤버십 카드는 멤버십 서비스 센터로 요청하는  회원에 한하여 등록한 주소지로 우편 발송되며, 카드 발행까지 최소 2~3주의 시간이 소요될 수 있습니다.
+\n10. 실물 멤버십 카드 분실 및 손실에 따른 재발행 시에는 멤버십 서비스 센터를 통한 재발행 신청 접수가 필요하며, 카드 재발행까지 최소 2~3주의 시간이 소요될 수 있습니다.
+\n11. 회사는 가입 회원을 대상으로 매월 1회(매월 둘째 주 목요일) 회원의 계정정보가 담긴 회원 명세서를 발송합니다.
+\n12. 회사는 가입 회원을 대상으로 매월 1회(매월 넷째 주 목요일) 호텔의 이벤트 및 프로모션 정보가 담긴 소식지를 발송합니다.
+\n제3조 회원 자격정지 및 탈퇴
+
+
+\n1. 회원 자격, 멤버십 카드, 등급별 혜택, 보유 포인트는 다른 회원을 포함한 제3자에게 양도가 불가능 합니다.
+\n2. 타인에 대한 임의적인 양도 적발 시에는 다음의 페널티가 적용됩니다.
+\n- 멤버십 자격 양도 : 회원자격 박탈 및 탈퇴 처리
+\n- 멤버십 카드 및 혜택 양도 : 부여된 혜택에 대한 소멸 처리
+\n- 포인트 양도 : 양도된 포인트에 대한 무효 처리 "
+
+                        android:textSize="10dp" />
+                </ScrollView>
+
+                <CheckBox
+                    android:id="@+id/checkboxJoin1Nh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="2"
+                    android:text="이용 약관에 대한 동의"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_join">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="1. 수집 이용 항목
+
+
+\n성명(국문·영문), 생년월일, 성별, 이메일주소, 연락처(휴대전화 or 자택), 자택 주소, 구매 및 예약내역, 투숙기간, 아이디, 비밀번호, 신라리워즈 번호
+\n2. 수집 이용 목적
+
+
+\n본인 식별, 신라리워즈 서비스 제공 및 민원처리
+\n3. 보유 이용 기간
+
+
+\n수집·시용 동의일로부터 회원 탈퇴 시 까지
+\n※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 신라리워즈 회원 가입 및 서비스 이용이 불가합니다."
+                        android:textSize="10dp" />
+                </ScrollView>
+
+                <CheckBox
+                    android:id="@+id/checkboxJoin2Nh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="2"
+                    android:text="개인 정보 이용에 대한 동의"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_join">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="1. 제공받는 자 : The One Hotel㈜
+\n2. 제공하는 항목
+\n성명(국문·영문), 생년월일, 성별, 이메일 주소, 휴대전화번호, 구매 및 예약 내역, 투숙기간, 아이디, The One 번호
+\n3. 제공받는 자의 이용 목적 : The One 서비스 제공
+\n4. 제공받은 자의 보유·이용 기간 :수집·이용 동의일로부터 회원 탈퇴 시까지
+
+\n※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 The One 회원 가입 및 서비스 이용이 불가합니다."
+                        android:textSize="10dp" />
+                </ScrollView>
+
+                <CheckBox
+                    android:id="@+id/checkboxJoin3Nh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="2"
+                    android:text="제 3자 제공에 대한 동의"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkboxJoinTotalNh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="전체 동의" />
+
+            <TextView
+                android:id="@+id/TextViewNextJoin2Nh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#403152"
+                android:gravity="center"
+                android:text="다음"
+                android:textColor="#fff"
+                android:textSize="25dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout_room"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <!--tools:context=".RoomActivity"-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="객실정보"
+                android:textSize="30dp"
+                android:layout_weight="9"
+                android:gravity="center"
+                android:background="#8064a2"
+                android:textColor="#ffffff"
+                />
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#e6b9b8"
+                    android:gravity="center"
+                    android:text="스탠다드"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewRoom1_hj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/room01" />
+                <Gallery
+                    android:layout_marginTop="-30dp"
+                    android:id="@+id/galleryRoom1_hj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-20dp"
+                    android:spacing="5dp"
+                    ></Gallery>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="고급 침구류와 창밖으로 보이는 오션뷰로 최고의 휴식을 경험해 보세요"
+
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/textlines2" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="침대"
+                            android:textColor="#e6b9b8"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="트윈"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="가격"
+                            android:textColor="#e6b9b8"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="100,000"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="전망"
+                            android:textColor="#e6b9b8"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="오션뷰"
+                            android:textSize="18dp" />
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#e6b9b8"
+                    android:gravity="center"
+                    android:text="디럭스"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewRoom2_hj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/room04" />
+                <Gallery
+                    android:layout_marginTop="-30dp"
+                    android:id="@+id/galleryRoom2_hj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spacing="5dp"
+                    android:layout_marginBottom="-20dp"></Gallery>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="고급스러운 별장의 게스트 룸과 같은 매력을 지닌 객실입니다."
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/textlines2" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#e6b9b8"
+                            android:text="침대"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="더블"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#e6b9b8"
+                            android:text="가격"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="150,000"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#e6b9b8"
+                            android:text="전망"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="마운틴뷰"
+                            android:textSize="18dp" />
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#e6b9b8"
+                    android:gravity="center"
+                    android:text="스위트"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewRoom3_hj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/room07" />
+
+                <Gallery
+                    android:layout_marginTop="-30dp"
+                    android:id="@+id/galleryRoom3_hj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spacing="5dp"
+                    android:layout_marginBottom="-20dp"></Gallery>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="모던한 분위기의 고급스러운 공간으로 여유로운 응접실과 다이닝 룸, 업무공간 및 침실로 구성된 객실입니다."
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/textlines2" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#e6b9b8"
+                            android:text="침대"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="패밀리"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#e6b9b8"
+                            android:text="가격"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="200,000"
+                            android:textSize="18dp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#e6b9b8"
+                            android:text="전망"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="5"
+                            android:text="모던뷰"
+                            android:textSize="18dp"
+                            android:layout_marginBottom="60dp"/>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="#8064a2"
+                    />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!--슬라이드 메뉴 레이아웃-->
+    <LinearLayout
+        android:id="@+id/slideMenu_room"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#e6e0ec"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#b3a2c7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textviewLoginState1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/textlines"
+                android:gravity="center|left"
+                android:text="로그인이 해주세요!"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#b3a2c7"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewGoingLoginFromRoomNh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="로그인" />
+
+                <TextView
+                    android:id="@+id/TextViewGoingJoinFromRoomNh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="가입" />
+
+                <TextView
+                    android:id="@+id/TextViewGoingCheckFromRoomNh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="예약 현황" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TextViewGoingShowFromRoomNh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="The One"
+            android:textColor="#000"
+            android:textSize="15dp" />
+
+
+        <TextView
+            android:id="@+id/TextViewGoingRoomFromRoomNh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="#953735"
+            android:textStyle="bold"
+            android:text="객실 정보"
+
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/TextViewGoingQuesFromRoomNh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="문의 사항"
+            android:textColor="#000"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
